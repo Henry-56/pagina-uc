@@ -118,6 +118,31 @@ h1, h2, h3, h4, h5, h6, .outfit-font {
     font-family: 'Outfit', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.navbar.scrolled .event-name {
+    color: var(--uc-navy);
+}
+
+/* Logo imagen — blanco sobre hero, colores reales sobre navbar blanco */
+.logo-img {
+    height: 38px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: var(--transition);
+}
+
+.navbar.scrolled .logo-img {
+    filter: none;
+}
+
+/* Logo footer — blanco sobre fondo azul */
+.footer-logo-img {
+    height: 42px;
+    width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .nav-links {

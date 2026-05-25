@@ -27,10 +27,12 @@ export default function Home() {
             <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
                 <div className="nav-container">
                     <div className="logo">
-                        <div className="logo-text">
-                            <span className="uni-name">Universidad Continental</span>
-                            <span className="event-name">Semana de Ingeniería</span>
-                        </div>
+                        <img
+                            src="https://ucontinental.edu.pe/site/wp-content/themes/salient-child/img/logo.svg"
+                            alt="Universidad Continental"
+                            className="logo-img"
+                        />
+                        <span className="event-name">Semana de Ingeniería</span>
                     </div>
                     <div className="nav-links">
                         <a href="#inicio" className="active">Inicio</a>
@@ -124,7 +126,11 @@ export default function Home() {
             <footer>
                 <div className="footer-content">
                     <div className="footer-logo">
-                        <span>Universidad Continental</span>
+                        <img
+                            src="https://ucontinental.edu.pe/site/wp-content/themes/salient-child/img/logo.svg"
+                            alt="Universidad Continental"
+                            className="footer-logo-img"
+                        />
                     </div>
                     <p className="footer-text">© 2026 Semana de Ingeniería. Todos los derechos reservados.</p>
                     <p className="footer-text" style={{ fontSize: '0.8rem', opacity: 0.5 }}>Plataforma desarrollada para eventos académicos de ingeniería.</p>
