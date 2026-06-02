@@ -1,0 +1,656 @@
+.adminPanel {
+    padding: 32px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    margin: 32px 0;
+    box-shadow: 0 10px 30px rgba(104, 2, 193, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    border-bottom: 2px solid var(--uc-navy);
+    padding-bottom: 16px;
+}
+
+.header h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--uc-navy);
+    margin: 0;
+}
+
+.alert {
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    margin-bottom: 24px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 32px;
+    color: var(--text-muted);
+    text-align: center;
+    gap: 16px;
+}
+
+.loadingState p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.btnAdd {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--uc-navy);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.btnAdd:hover:not(:disabled) {
+    background: var(--uc-navy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(104, 2, 193, 0.3);
+}
+
+.btnAdd:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Form Container */
+.formContainer {
+    background: white;
+    border: 2px solid var(--uc-navy);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 12px rgba(104, 2, 193, 0.15);
+    animation: slideIn 0.3s ease-out;
+}
+
+.formHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--uc-navy);
+}
+
+.formHeader h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--uc-navy);
+    margin: 0;
+}
+
+.btnClose {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--uc-navy);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+.btnClose:hover:not(:disabled) {
+    color: var(--uc-navy-light);
+    transform: scale(1.1);
+}
+
+.btnClose:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form {
+    display: grid;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 12px 16px;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    color: var(--text-main);
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: var(--uc-navy);
+    box-shadow: 0 0 0 3px rgba(104, 2, 193, 0.1);
+    background-color: rgba(104, 2, 193, 0.02);
+}
+
+.formGroup input:disabled,
+.formGroup select:disabled {
+    background-color: #f8f9fa;
+    opacity: 0.6;
+}
+
+.formGroup input::placeholder {
+    color: var(--text-muted);
+}
+
+.formActions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border-light);
+}
+
+.btnSave,
+.btnCancel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    flex: 1;
+    justify-content: center;
+}
+
+.btnSave {
+    background: var(--uc-navy);
+    color: white;
+}
+
+.btnSave:hover:not(:disabled) {
+    background: var(--uc-navy-light);
+    box-shadow: 0 8px 16px rgba(104, 2, 193, 0.3);
+    transform: translateY(-2px);
+}
+
+.btnSave:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btnCancel {
+    background: var(--border-light);
+    color: var(--text-main);
+}
+
+.btnCancel:hover:not(:disabled) {
+    background: #e0e7f1;
+}
+
+.btnCancel:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Events List */
+.eventsList {
+    display: grid;
+    gap: 16px;
+}
+
+.emptyState {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 32px;
+    font-style: italic;
+    font-family: 'Inter', sans-serif;
+}
+
+.eventCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: white;
+    border: 2px solid var(--border-light);
+    border-left: 5px solid var(--uc-navy);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+}
+
+.eventCard:hover {
+    box-shadow: var(--shadow-hover);
+    border-left-color: var(--uc-navy-light);
+    transform: translateX(4px);
+}
+
+.eventContent {
+    flex: 1;
+    min-width: 300px;
+}
+
+.eventMeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.time {
+    font-weight: 700;
+    color: var(--uc-navy);
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+}
+
+.date {
+    font-weight: 600;
+    color: #7D2FD9;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    padding: 2px 8px;
+    background: rgba(125, 47, 217, 0.1);
+    border-radius: 4px;
+}
+
+.type {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.type.virtual {
+    background: rgba(104, 2, 193, 0.15);
+    color: var(--uc-navy);
+}
+
+.type.presencial {
+    background: rgba(249, 115, 22, 0.15);
+    color: #F97316;
+}
+
+.type.híbrido {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10B981;
+}
+
+.title {
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+}
+
+.speaker,
+.career,
+.meetLink {
+    margin: 8px 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+}
+
+.speaker strong,
+.career strong,
+.meetLink strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.meetLink a {
+    color: var(--uc-navy);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    word-break: break-all;
+}
+
+.meetLink a:hover {
+    color: var(--uc-navy-light);
+    text-decoration: underline;
+}
+
+.eventActions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btnEdit,
+.btnDelete {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.btnEdit {
+    background: rgba(104, 2, 193, 0.1);
+    color: var(--uc-navy);
+}
+
+.btnEdit:hover:not(:disabled) {
+    background: rgba(104, 2, 193, 0.2);
+    transform: scale(1.08);
+}
+
+.btnEdit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btnDelete {
+    background: rgba(239, 68, 68, 0.1);
+    color: #EF4444;
+}
+
+.btnDelete:hover:not(:disabled) {
+    background: rgba(239, 68, 68, 0.2);
+    transform: scale(1.08);
+}
+
+.btnDelete:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ── Layout calendario + lista ─────────────────────────── */
+.calendarEventsLayout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.eventsPane {
+    min-width: 0;
+}
+
+/* ── Calendario ────────────────────────────────────────── */
+.calendar {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 18px;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 4px 16px rgba(104, 2, 193, 0.08);
+}
+
+.calHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.calTitle {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--uc-navy);
+    text-align: center;
+    flex: 1;
+}
+
+.calNav {
+    background: none;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 4px 6px;
+    cursor: pointer;
+    color: var(--uc-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    line-height: 0;
+}
+
+.calNav:hover {
+    background: rgba(104, 2, 193, 0.1);
+    border-color: var(--uc-navy);
+}
+
+.calGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.calDayLabel {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding: 4px 0 6px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calDay {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 2px 4px;
+    border: none;
+    background: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-main);
+    transition: background 0.15s ease, color 0.15s ease;
+    gap: 2px;
+    min-height: 34px;
+}
+
+.calDay:hover {
+    background: rgba(104, 2, 193, 0.08);
+}
+
+/* Fecha con eventos: franja morada suave */
+.calDayEvent {
+    background: rgba(104, 2, 193, 0.13);
+    color: var(--uc-navy);
+    font-weight: 700;
+}
+
+.calDayEvent:hover {
+    background: rgba(104, 2, 193, 0.22);
+}
+
+/* Fecha seleccionada: morado sólido */
+.calDaySelected {
+    background: var(--uc-navy) !important;
+    color: white !important;
+    font-weight: 700;
+}
+
+.calDaySelected:hover {
+    background: var(--uc-navy-light) !important;
+}
+
+/* Punto indicador debajo del número */
+.calDot {
+    width: 4px;
+    height: 4px;
+    background: var(--uc-navy);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.calDaySelected .calDot {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.calClearBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    margin-top: 12px;
+    padding: 8px;
+    background: rgba(104, 2, 193, 0.07);
+    color: var(--uc-navy);
+    border: 1px solid rgba(104, 2, 193, 0.2);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.calClearBtn:hover {
+    background: rgba(104, 2, 193, 0.14);
+}
+
+/* ── Banner de filtro activo ───────────────────────────── */
+.filterBanner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(104, 2, 193, 0.07);
+    border: 1px solid rgba(104, 2, 193, 0.2);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--uc-navy);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.filterCount {
+    margin-left: auto;
+    font-weight: 700;
+    background: var(--uc-navy);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .calendarEventsLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .adminPanel {
+        padding: 16px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .header h2 {
+        font-size: 20px;
+    }
+
+    .btnAdd {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form {
+        gap: 16px;
+    }
+
+    .eventCard {
+        flex-direction: column;
+    }
+
+    .eventActions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .eventContent {
+        width: 100%;
+    }
+}

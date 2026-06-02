@@ -2,8 +2,8 @@
 
 :root {
     /* Brand Colors - Universidad Continental */
-    --uc-navy: #023F88; /* Azul Oficial */
-    --uc-navy-light: #0353A8;
+    --uc-navy: #6802C1; /* Morado Oficial */
+    --uc-navy-light: #7D2FD9;
     --uc-gold: #F6DDBB; /* Arena Oficial */
     --uc-gold-dark: #E2B980;
     
@@ -24,8 +24,8 @@
     --fac-sistemas: #0EA5E9;   /* Cyan */
     
     --border-light: #E2E8F0;
-    --shadow-card: 0 10px 25px -5px rgba(2, 63, 136, 0.08), 0 8px 10px -6px rgba(2, 63, 136, 0.04);
-    --shadow-hover: 0 20px 25px -5px rgba(2, 63, 136, 0.15), 0 8px 10px -6px rgba(2, 63, 136, 0.05);
+    --shadow-card: 0 10px 25px -5px rgba(104, 2, 193, 0.08), 0 8px 10px -6px rgba(104, 2, 193, 0.04);
+    --shadow-hover: 0 20px 25px -5px rgba(104, 2, 193, 0.15), 0 8px 10px -6px rgba(104, 2, 193, 0.05);
     
     --radius-lg: 16px;
     --radius-md: 12px;
@@ -177,6 +177,39 @@ h1, h2, h3, h4, h5, h6, .outfit-font {
 
 .nav-links a:hover::after, .nav-links a.active::after {
     width: 100%;
+}
+
+/* Admin Button */
+.admin-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--uc-navy);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 2px solid var(--uc-navy);
+}
+
+.admin-btn:hover {
+    background: var(--uc-navy-light);
+    border-color: var(--uc-navy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(104, 2, 193, 0.3);
+}
+
+.navbar.scrolled .admin-btn {
+    background: rgba(104, 2, 193, 0.1);
+    color: var(--uc-navy);
+    border-color: var(--uc-navy);
+}
+
+.navbar.scrolled .admin-btn:hover {
+    background: rgba(104, 2, 193, 0.2);
 }
 
 /* Hero Section */
@@ -422,6 +455,11 @@ h1, h2, h3, h4, h5, h6, .outfit-font {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .day-header {

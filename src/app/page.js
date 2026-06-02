@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ArrowRight, CalendarDays, Users, MonitorPlay, Globe } from 'lucide-react';
+import { ArrowRight, CalendarDays, Users, MonitorPlay, Globe, Settings } from 'lucide-react';
+import Link from 'next/link';
 import Schedule from '@/components/Schedule';
+import AdminPanel from '@/components/AdminPanel';
 import Image from 'next/image';
 
 export default function Home() {
@@ -39,6 +41,10 @@ export default function Home() {
                         <a href="#cronograma">Cronograma</a>
                         <a href="#acerca">Acerca</a>
                     </div>
+                    <Link href="/admin" className="admin-btn">
+                        <Settings size={20} />
+                        Admin
+                    </Link>
                 </div>
             </nav>
 
@@ -121,6 +127,11 @@ export default function Home() {
 
             {/* Schedule Data */}
             <Schedule />
+
+            {/* Admin Panel */}
+            <section id="admin" className="admin-section" style={{ padding: '60px 24px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+                <AdminPanel />
+            </section>
 
             {/* Footer */}
             <footer>
