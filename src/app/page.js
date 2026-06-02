@@ -70,7 +70,7 @@ export default function Home() {
                     <div className="hero-visual">
                         <div style={{ position: 'relative', width: '100%', height: '500px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}>
                             <Image 
-                                src="/campus_students.png" 
+                                src="/IMAGEN PAGINA.png"
                                 alt="Estudiantes en el campus"
                                 fill
                                 style={{ objectFit: 'cover' }}

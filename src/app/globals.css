@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@font-face {
+    font-family: 'Neue Plak Condensed';
+    src: url('/Neue Plak Condensed Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Plak Condensed';
+    src: url('/Neue Plak Condensed Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Plak Condensed';
+    src: url('/Neue Plak Condensed Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     /* Brand Colors - Universidad Continental */
@@ -54,7 +78,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .outfit-font {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
 }
 
 /* Navigation */
@@ -115,7 +139,7 @@ h1, h2, h3, h4, h5, h6, .outfit-font {
 }
 
 .event-name {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-light);
@@ -436,7 +460,7 @@ h1, h2, h3, h4, h5, h6, .outfit-font {
 }
 
 .tab-title {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
 }
@@ -594,7 +618,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
 }

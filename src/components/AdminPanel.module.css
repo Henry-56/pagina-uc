@@ -16,7 +16,7 @@
 }
 
 .header h2 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: var(--uc-navy);
@@ -120,7 +120,7 @@
 }
 
 .formHeader h3 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: var(--uc-navy);
@@ -300,14 +300,14 @@
 .time {
     font-weight: 700;
     color: var(--uc-navy);
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
     font-size: 14px;
 }
 
 .date {
     font-weight: 600;
     color: #7D2FD9;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
     font-size: 13px;
     padding: 2px 8px;
     background: rgba(125, 47, 217, 0.1);
@@ -343,7 +343,7 @@
     font-size: 16px;
     font-weight: 700;
     color: var(--text-main);
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
 }
 
 .speaker,
@@ -455,7 +455,7 @@
 }
 
 .calTitle {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Neue Plak Condensed', sans-serif;
     font-weight: 700;
     font-size: 14px;
     color: var(--uc-navy);
