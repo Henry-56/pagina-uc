@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CalendarDays, User, Tag, MapPin, Loader } from 'lucide-react';
+import { CalendarDays, User, Tag, MapPin, Loader, ExternalLink } from 'lucide-react';
 
 const WEEKS = [
     { week: 0, label: 'Semana 1', start: '2026-05-25', end: '2026-05-30', dateLabel: '25 - 30 Mayo' },
@@ -147,10 +147,23 @@ export default function Schedule() {
                                                             <Tag size={12} />
                                                             {event.career}
                                                         </span>
-                                                        <span className="badge-tag badge-type">
-                                                            <MapPin size={12} />
-                                                            {event.type}
-                                                        </span>
+                                                        {event.meetLink ? (
+                                                            <a
+                                                                href={event.meetLink}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="badge-tag badge-type badge-meet"
+                                                            >
+                                                                <MapPin size={12} />
+                                                                {event.type}
+                                                                <ExternalLink size={11} />
+                                                            </a>
+                                                        ) : (
+                                                            <span className="badge-tag badge-type">
+                                                                <MapPin size={12} />
+                                                                {event.type}
+                                                            </span>
+                                                        )}
                                                     </div>
                                                 </div>
                                             </div>
